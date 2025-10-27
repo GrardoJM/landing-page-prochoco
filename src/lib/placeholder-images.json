@@ -1,0 +1,28 @@
+{
+  "placeholderImages": [
+    {
+      "id": "dark-delight",
+      "description": "A rich and intense 85% cacao dark chocolate bar.",
+      "imageUrl": "https://images.unsplash.com/photo-1646303339019-a57056b180ae?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxkYXJrJTIwY2hvY29sYXRlfGVufDB8fHx8MTc2MTQ1MTIxNnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "dark chocolate"
+    },
+    {
+      "id": "milky-way",
+      "description": "Creamy and smooth milk chocolate with a hint of caramel.",
+      "imageUrl": "https://images.unsplash.com/photo-1679143121530-867b007baa84?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxtaWxrJTIwY2hvY29sYXRlfGVufDB8fHx8MTc2MTUyMzc5MXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "milk chocolate"
+    },
+    {
+      "id": "sea-salt-surprise",
+      "description": "Dark chocolate perfectly balanced with flakes of sea salt.",
+      "imageUrl": "https://images.unsplash.com/photo-1758191443045-da47b43f5a89?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxjaG9jb2xhdGUlMjBzYWx0fGVufDB8fHx8MTc2MTUyMzc5MXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "chocolate salt"
+    },
+    {
+      "id": "hazelnut-heaven",
+      "description": "Classic milk chocolate with whole roasted hazelnuts.",
+      "imageUrl": "https://images.unsplash.com/photo-1720029106261-0d0396bb270d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjaG9jb2xhdGUlMjBudXRzfGVufDB8fHx8MTc2MTUyMzc5MXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "chocolate nuts"
+    }
+  ]
+}
