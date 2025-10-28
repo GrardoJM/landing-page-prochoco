@@ -20,10 +20,9 @@ export function SealsAlertDialog({ isOpen, onOpenChange }: SealsAlertDialogProps
     <AlertDialog open={isOpen} onOpenChange={onOpenChange}>
       <AlertDialogContent>
         <AlertDialogHeader>
-          <AlertDialogTitle className="font-headline text-2xl text-center">A little secret...</AlertDialogTitle>
+          <AlertDialogTitle className="font-headline text-2xl text-center">Un pequeño secreto...</AlertDialogTitle>
           <AlertDialogDescription className="text-center text-lg pt-4">
-            You expected to see something here, we're sorry but our product is
-            really healthy haha
+            Esperabas ver algo aquí, lo sentimos, pero nuestro producto es muy saludable, jaja.
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>

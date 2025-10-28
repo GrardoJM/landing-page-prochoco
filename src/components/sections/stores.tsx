@@ -7,20 +7,38 @@ import { cn } from '@/lib/utils';
 
 const stores = [
   {
-    name: 'Gourmet Market',
-    location: '123 Foodie Lane, Flavor Town',
+    name: 'Amazon Mx',
+    location: '123 Britannia, Flavor Town',
     delay: 'duration-300',
     url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
   },
   {
-    name: 'The Chocolate Emporium',
-    location: '456 Sweet Street, Cacao City',
+    name: 'Mercado Libre',
+    location: '456 Vinland, Cacao City',
     delay: 'duration-500',
     url: 'https://www.youtube.com/watch?v=o-YBDTqX_ZU'
   },
   {
-    name: 'Health & Happiness',
-    location: '789 Wellness Ave, Organic Oasis',
+    name: 'Smart Fit',
+    location: '789 Shibuya, Organic Oasis',
+    delay: 'duration-700',
+    url: 'https://www.youtube.com/watch?v=QH2-TGUlwu4'
+  },
+  {
+    name: 'Oxxos',
+    location: '123 Grand Line, Flavor Town',
+    delay: 'duration-700',
+    url: 'https://www.youtube.com/watch?v=QH2-TGUlwu4'
+  },
+  {
+    name: 'Walmarts',
+    location: '456  Konoha, Cacao City',
+    delay: 'duration-700',
+    url: 'https://www.youtube.com/watch?v=QH2-TGUlwu4'
+  },
+  {
+    name: 'Proximamente en tu tienda favorita',
+    location: '',
     delay: 'duration-700',
     url: 'https://www.youtube.com/watch?v=QH2-TGUlwu4'
   },
@@ -31,9 +49,9 @@ export default function Stores() {
   return (
     <section id="stores" ref={ref} className={cn("container mx-auto py-16 md:py-24 transition-all duration-1000 ease-out", isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10')}>
       <div className="text-center mb-12">
-        <h2 className="font-headline text-3xl md:text-4xl font-bold">Find Us In Stores</h2>
+        <h2 className="font-headline text-3xl md:text-4xl font-bold">Encuentranos en nuestras tiendas</h2>
         <p className="text-muted-foreground mt-2 max-w-2xl mx-auto">
-          Our chocolates are available at these fine retailers.
+          Nuestros chocolates están disponibles en estas tiendas.        
         </p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

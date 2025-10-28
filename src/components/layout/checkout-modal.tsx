@@ -53,9 +53,9 @@ export function CheckoutModal({ isOpen, onOpenChange }: CheckoutModalProps) {
     <Dialog open={isOpen} onOpenChange={onOpenChange}>
       <DialogContent className="sm:max-w-2xl">
         <DialogHeader>
-          <DialogTitle className="font-headline text-2xl">Your Shopping Cart</DialogTitle>
+          <DialogTitle className="font-headline text-2xl">Tu carrito de compras</DialogTitle>
           <DialogDescription>
-            Review your items and complete your order.
+            Revise sus artículos y complete su pedido.
           </DialogDescription>
         </DialogHeader>
         {cartItems.length > 0 ? (
@@ -88,22 +88,22 @@ export function CheckoutModal({ isOpen, onOpenChange }: CheckoutModalProps) {
 
             <form className="grid gap-4" onSubmit={handleConfirmPurchase}>
                 <div className="grid gap-2">
-                    <Label htmlFor="name">Full Name</Label>
-                    <Input id="name" placeholder="Your Name" required />
+                    <Label htmlFor="name">Nombre completo</Label>
+                    <Input id="name" placeholder="Tu nombre" required />
                 </div>
                 <div className="grid grid-cols-2 gap-4">
                     <div className="grid gap-2">
-                        <Label htmlFor="email">Email</Label>
-                        <Input id="email" type="email" placeholder="your@email.com" required />
+                        <Label htmlFor="email">Correo Electronico</Label>
+                        <Input id="email" type="email" placeholder="tuc@correo.com" required />
                     </div>
                      <div className="grid gap-2">
-                        <Label htmlFor="payment">Payment Method</Label>
+                        <Label htmlFor="payment">Método de pago</Label>
                         <Select required defaultValue="credit-card">
                         <SelectTrigger id="payment">
-                            <SelectValue placeholder="Select a payment method" />
+                            <SelectValue placeholder="Selecciona un método de pago" />
                         </SelectTrigger>
                         <SelectContent>
-                            <SelectItem value="credit-card">Credit Card</SelectItem>
+                            <SelectItem value="credit-card">Tarjeta de Crédito</SelectItem>
                             <SelectItem value="paypal">PayPal</SelectItem>
                             <SelectItem value="choco-coin">ChocoCoin</SelectItem>
                         </SelectContent>
@@ -111,20 +111,20 @@ export function CheckoutModal({ isOpen, onOpenChange }: CheckoutModalProps) {
                     </div>
                 </div>
                 <div className="grid gap-2">
-                    <Label htmlFor="address">Shipping Address</Label>
-                    <Textarea id="address" placeholder="123 Chocolate Lane, Sweetville" required />
+                    <Label htmlFor="address">Dirección de envío</Label>
+                    <Textarea id="address" placeholder="Grand Line 123" required />
                 </div>
                 <DialogFooter className="mt-4">
-                    <p className="text-muted-foreground mr-auto">Total Items: {totalItems}</p>
-                    <Button type="submit" className="w-full sm:w-auto">Buy Now</Button>
+                    <p className="text-muted-foreground mr-auto">Total de artículos: {totalItems}</p>
+                    <Button type="submit" className="w-full sm:w-auto">Comprar Ahora</Button>
                 </DialogFooter>
             </form>
           </>
         ) : (
           <div className="text-center py-12">
             <ShoppingCart className="h-12 w-12 mx-auto text-muted-foreground" />
-            <p className="mt-4 text-muted-foreground">Your cart is empty.</p>
-            <Button className="mt-4" onClick={handleStartShopping}>Start Shopping</Button>
+            <p className="mt-4 text-muted-foreground">Tu carrito de compras esta vacío.</p>
+            <Button className="mt-4" onClick={handleStartShopping}>Empieza a comprar</Button>
           </div>
         )}
       </DialogContent>

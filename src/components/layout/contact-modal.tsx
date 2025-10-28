@@ -1,6 +1,5 @@
 
 'use client';
-
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -17,25 +16,25 @@ export function ContactModal({ isOpen, onOpenChange }: ContactModalProps) {
     <Dialog open={isOpen} onOpenChange={onOpenChange}>
       <DialogContent className="sm:max-w-lg">
         <DialogHeader>
-          <DialogTitle className="font-headline text-2xl">Contact Us</DialogTitle>
+          <DialogTitle className="font-headline text-2xl">Contactanos!</DialogTitle>
           <DialogDescription>
-            Have a question or feedback? Fill out the form below and we'll get back to you soon.
+            ¿Tienes alguna pregunta o comentario? Complete el formulario a continuación y nos pondremos en contacto con usted pronto.
           </DialogDescription>
         </DialogHeader>
         <form className="grid gap-4 py-4">
           <div className="grid gap-2">
-            <Label htmlFor="name">Name</Label>
-            <Input id="name" placeholder="Your Name" />
+            <Label htmlFor="name">Nombre</Label>
+            <Input id="name" placeholder="Tu nombre" />
           </div>
           <div className="grid gap-2">
-            <Label htmlFor="email">Email</Label>
-            <Input id="email" type="email" placeholder="your@email.com" />
+            <Label htmlFor="email">Correo Electronico</Label>
+            <Input id="email" type="email" placeholder="tuc@correo.com" />
           </div>
           <div className="grid gap-2">
-            <Label htmlFor="message">Message</Label>
-            <Textarea id="message" placeholder="Your message..." />
+            <Label htmlFor="message">Cuentanos</Label>
+            <Textarea id="message" placeholder="Tu mensaje..." />
           </div>
-          <Button type="submit" className="w-full mt-2">Send Message</Button>
+          <Button type="submit" className="w-full mt-2">Enviar Mensaje</Button>
         </form>
       </DialogContent>
     </Dialog>

@@ -33,11 +33,11 @@ export default function Header() {
         <div className="container flex h-14 max-w-screen-2xl items-center justify-between">
           <Logo />
           <nav className="hidden md:flex items-center gap-4">
-            <Button variant="ghost" onClick={() => scrollTo('recipes')}>Recipes</Button>
-            <Button variant="ghost" onClick={() => scrollTo('stores')}>Stores</Button>
-            <Button variant="ghost" onClick={() => setGoalVisionModalOpen(true)}>Our Vision</Button>
-            <Button variant="ghost" onClick={() => setSealsAlertOpen(true)}>Seals</Button>
-            <Button variant="ghost" onClick={() => setContactModalOpen(true)}>Contact</Button>
+            <Button variant="ghost" onClick={() => scrollTo('recipes')}>Recetas</Button>
+            <Button variant="ghost" onClick={() => scrollTo('stores')}>Tiendas</Button>
+            <Button variant="ghost" onClick={() => setGoalVisionModalOpen(true)}>Nuestra Vision</Button>
+            <Button variant="ghost" onClick={() => setSealsAlertOpen(true)}>Cuidados</Button>
+            <Button variant="ghost" onClick={() => setContactModalOpen(true)}>Contactanos</Button>
           </nav>
           <Button onClick={() => setCheckoutModalOpen(true)} variant="outline" className="relative">
             <ShoppingCart className="h-5 w-5" />

@@ -20,8 +20,8 @@ export default function ProductShowcase() {
     addToCart(product);
     const productName = product.id.replace(/-/g, ' ');
     toast({
-      title: "Added to Cart!",
-      description: `One ${productName} has been added to your cart.`,
+      title: "Agregado al carrito",
+      description: `${productName} agregado al carrito`,
     });
   };
 
@@ -30,9 +30,9 @@ export default function ProductShowcase() {
       <section id="product-showcase" ref={ref} className={cn("bg-primary/5 py-16 md:py-24 transition-all duration-1000 ease-out", isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10')}>
         <div className="container mx-auto">
           <div className="text-center mb-12">
-            <h2 className="font-headline text-3xl md:text-4xl font-bold">Our Signature Collection</h2>
+            <h2 className="font-headline text-3xl md:text-4xl font-bold">Conoce nuestros sabores</h2>
             <p className="text-muted-foreground mt-2 max-w-2xl mx-auto">
-              Crafted with passion, our chocolates are a testament to quality and flavor. Discover your new favorite.
+              Elaborados con pasión, nuestros chocolates son un testimonio de calidad y sabor. Descubre tu nuevo favorito.
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -56,7 +56,7 @@ export default function ProductShowcase() {
                      <CardTitle className="font-headline text-xl mb-2 capitalize">{productName}</CardTitle>
                      <CardDescription className="flex-grow">{product.description}</CardDescription>
                      <Button className="w-full mt-4" variant="secondary" onClick={() => handleAddToCart(product)}>
-                       <ShoppingCart className="mr-2 h-4 w-4" /> Add to Cart
+                       <ShoppingCart className="mr-2 h-4 w-4" /> Añadir al carrito
                      </Button>
                   </CardContent>
                 </Card>

@@ -8,20 +8,20 @@ import { cn } from '@/lib/utils';
 const seals = [
     {
         icon: <ShieldCheck className="h-8 w-8 text-primary" />,
-        title: 'Gluten-Free',
-        description: 'Our chocolates are made without gluten, so everyone can enjoy them.',
+        title: 'Libre de sellos de azúcar',
+        description: 'Nuestros chocolates están elaborados sin gluten, para que todos puedan disfrutarlos.',
         delay: 'duration-300'
     },
     {
         icon: <ShieldCheck className="h-8 w-8 text-primary" />,
-        title: 'Soy-Free',
-        description: 'We use sunflower lecithin instead of soy, making our chocolates soy-free.',
+        title: 'Proteina Extra',
+        description: 'Cada barra está enriquecida con proteínas adicionales para un impulso saludable.',
         delay: 'duration-500'
     },
     {
         icon: <ShieldCheck className="h-8 w-8 text-primary" />,
-        title: 'Fair Trade',
-        description: 'We are committed to fair trade practices, ensuring our farmers are paid fairly.',
+        title: 'A un precio justo',
+        description: 'Ofrecemos chocolates de alta calidad a precios accesibles para todos.',
         delay: 'duration-700'
     }
 ]
@@ -32,9 +32,9 @@ export default function Seals() {
   return (
     <section id="seals" ref={ref} className={cn("container mx-auto py-16 md:py-24 transition-all duration-1000 ease-out", isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10')}>
       <div className="text-center mb-12">
-        <h2 className="font-headline text-3xl md:text-4xl font-bold">Our Seals of Quality</h2>
+        <h2 className="font-headline text-3xl md:text-4xl font-bold">Nuestros Sellos de Calidad</h2>
         <p className="text-muted-foreground mt-2 max-w-2xl mx-auto">
-          We are committed to providing the highest quality chocolate, and these seals are a testament to that.
+          Estamos comprometidos a ofrecer chocolate de la más alta calidad y estos sellos son un testimonio de ello.
         </p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

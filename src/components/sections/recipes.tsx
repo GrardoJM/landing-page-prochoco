@@ -33,9 +33,9 @@ export default function Recipes() {
     <section id="recipes" ref={ref} className={cn("bg-primary/5 py-16 md:py-24 transition-all duration-1000 ease-out", isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10')}>
       <div className="container mx-auto">
         <div className="text-center mb-12">
-          <h2 className="font-headline text-3xl md:text-4xl font-bold">From Our Kitchen to Yours</h2>
+          <h2 className="font-headline text-3xl md:text-4xl font-bold">De nuestra cocina a la tuya</h2>
           <p className="text-muted-foreground mt-2 max-w-2xl mx-auto">
-            Discover delicious ways to use ProChoco in your favorite desserts.
+            Descubre deliciosas formas de utilizar ProChoco en tus postres favoritos.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
