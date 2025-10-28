@@ -4,30 +4,65 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import Image from "next/image"
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { cn } from "@/lib/utils";
-
+import { RecipesModal } from '@/components/layout/recipes-modal';
+import { useState } from 'react';
 const recipes = [
   {
-    title: "Decadent Chocolate Lava Cake",
-    description: "A rich, gooey-centered cake made with our 85% Dark Delight bar. The ultimate indulgence.",
-    imageUrl: "https://images.unsplash.com/photo-1586985289936-7605d767554e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjaG9jb2xhdGUlMjBsYXZhJTIwY2FrZXxlbnwwfHx8fDE3MjE4MzY3MDd8MA&ixlib=rb-4.1.0&q=80&w=1080",
-    imageHint: "lava cake"
+    title: "Barra de Proteína de Chocolate y Avena",
+    description: "Una mezcla deliciosa de avena integral y cacao puro, ideal para recuperar energía después del entrenamiento.",
+    imageUrl: "/avena.png",
+    imageHint: "chocolate oat protein bar",
+    type: "chocolate"
   },
   {
-    title: "Sea Salt Chocolate Chip Cookies",
-    description: "Elevate a classic cookie with chunks of our Sea Salt Surprise bar for a sweet and salty kick.",
-    imageUrl: "https://images.unsplash.com/photo-1499636136210-6f4ee915583e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjaG9jb2xhdGUlMjBjaGlwJTIwY29va2llc3xlbnwwfHx8fDE3MjE4MzY4MTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
-    imageHint: "chocolate cookie"
+    title: "Barra Energética de Cacahuate y Miel",
+    description: "Combinación perfecta entre proteína vegetal, miel natural y trozos de cacahuate tostado. Dulce, crujiente y nutritiva.",
+    imageUrl: "/miel.png",
+    imageHint: "peanut honey protein bar",
+    type: "miel"
   },
   {
-    title: "Hazelnut Chocolate Mousse",
-    description: "A light and airy mousse using our Hazelnut Heaven bar, topped with toasted hazelnuts.",
-    imageUrl: "https://images.unsplash.com/photo-1606790239334-b9643409345e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjaG9jb2xhdGUlMjBtb3Vzc2V8ZW58MHx8fHwxNzIxODM2ODQ5fDA&ixlib=rb-4.1.0&q=80&w=1080",
-    imageHint: "chocolate mousse"
+    title: "Barra Proteica de Fresa y Yogur",
+    description: "Fresca, suave y con un toque ácido del yogur griego. Perfecta para un snack rápido y saludable.",
+    imageUrl: "/fresa.png",
+    imageHint: "strawberry yogurt protein bar",
+    type: "yogur"
+  },
+  {
+    title: "Barra de Proteína de Chocolate Negro con Almendras",
+    description: "El sabor intenso del cacao con la crocancia de las almendras. Fuente natural de antioxidantes y energía.",
+    imageUrl: "/almentra.png",
+    imageHint: "dark chocolate almond protein bar",
+    type: "almond"
+  },
+  {
+    title: "Barra Vegana de Coco y Chía",
+    description: "Ligera, tropical y con alto contenido en fibra. Ideal para quienes buscan energía sin ingredientes animales.",
+    imageUrl: "/chioa.png",
+    imageHint: "coconut chia vegan bar",
+    type: "coco"
   }
 ]
 
+
+interface RecipesModalProps {
+  title: string;
+  description: string;
+  imageUrl: string;
+  imageHint: string;
+  type: string
+}
+
 export default function Recipes() {
   const { ref, isInView } = useScrollAnimation();
+  const [isRecipesModalOpen, setRecipesModalOpen] = useState(false);
+  const [type, setType] = useState("");
+  
+
+  const handleRecipesModal = (recipe: RecipesModalProps ) => {
+    setRecipesModalOpen(true);
+    setType(recipe.type);
+  };
 
   return (
     <section id="recipes" ref={ref} className={cn("bg-primary/5 py-16 md:py-24 transition-all duration-1000 ease-out", isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10')}>
@@ -40,7 +75,7 @@ export default function Recipes() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {recipes.map((recipe, index) => (
-            <Card key={index} className={cn("overflow-hidden group flex flex-col shadow-sm transition-all hover:shadow-lg", `duration-${300 + index*200}`, isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10')}>
+            <Card onClick={() => handleRecipesModal(recipe)} key={index} className={cn("overflow-hidden group flex flex-col shadow-sm transition-all hover:shadow-lg", `duration-${300 + index*200}`, isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10')}>
                <CardHeader className="p-0">
                 <div className="overflow-hidden aspect-video">
                   <Image
@@ -61,6 +96,8 @@ export default function Recipes() {
           ))}
         </div>
       </div>
+
+      <RecipesModal isOpen={isRecipesModalOpen} onOpenChange={setRecipesModalOpen} type={type} /> 
     </section>
   )
 }

@@ -1,28 +1,28 @@
 {
   "placeholderImages": [
     {
-      "id": "dark-delight",
-      "description": "A rich and intense 85% cacao dark chocolate bar.",
-      "imageUrl": "https://images.unsplash.com/photo-1646303339019-a57056b180ae?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxkYXJrJTIwY2hvY29sYXRlfGVufDB8fHx8MTc2MTQ1MTIxNnww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "dark chocolate"
+      "id": "Chocolate Obscuro 85%",
+      "description": "Una barra intensa de chocolate oscuro 85% cacao, con un sabor profundo y natural que despierta todos tus sentidos.",
+      "imageUrl": "https://images.unsplash.com/photo-1646303339019-a57056b180ae?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+      "imageHint": "chocolate oscuro"
     },
     {
-      "id": "milky-way",
-      "description": "Creamy and smooth milk chocolate with a hint of caramel.",
-      "imageUrl": "https://images.unsplash.com/photo-1679143121530-867b007baa84?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxtaWxrJTIwY2hvY29sYXRlfGVufDB8fHx8MTc2MTUyMzc5MXww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "milk chocolate"
+      "id": "Chocolate Blanco Cremoso",
+      "description": "Chocolate blanco cremoso con notas suaves de vainilla. Dulce, aterciopelado y perfecto para los amantes de lo clásico.",
+      "imageUrl": "https://images.unsplash.com/photo-1679143121530-867b007baa84?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+      "imageHint": "chocolate blanco"
     },
     {
-      "id": "sea-salt-surprise",
-      "description": "Dark chocolate perfectly balanced with flakes of sea salt.",
-      "imageUrl": "https://images.unsplash.com/photo-1758191443045-da47b43f5a89?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxjaG9jb2xhdGUlMjBzYWx0fGVufDB8fHx8MTc2MTUyMzc5MXww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "chocolate salt"
+      "id": "Chocolate con Nueces",
+      "description": "Chocolate con trozos de nueces tostadas, lleno de textura y sabor. Una mezcla balanceada entre energía y placer.",
+      "imageUrl": "https://images.unsplash.com/photo-1720029106261-0d0396bb270d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+      "imageHint": "chocolate con nueces"
     },
     {
-      "id": "hazelnut-heaven",
-      "description": "Classic milk chocolate with whole roasted hazelnuts.",
-      "imageUrl": "https://images.unsplash.com/photo-1720029106261-0d0396bb270d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjaG9jb2xhdGUlMjBudXRzfGVufDB8fHx8MTc2MTUyMzc5MXww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "chocolate nuts"
+      "id": "Chocolate con Almendras y Avena",
+      "description": "Chocolate con almendras y avena, una barra rica en fibra y proteínas naturales. Ideal para recuperar energía con sabor real.",
+      "imageUrl": "https://images.unsplash.com/photo-1758191443045-da47b43f5a89?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+      "imageHint": "chocolate con almendras y avena"
     }
   ]
 }

@@ -9,12 +9,16 @@ import { useScrollAnimation } from '@/hooks/use-scroll-animation';
 import { cn } from '@/lib/utils';
 import { useToast } from '@/hooks/use-toast';
 import { useCart } from '@/context/cart-context';
+import { ContactModal } from '@/components/layout/contact-modal';
+import { useState } from 'react';
+
 
 export default function ProductShowcase() {
-  const products = PlaceHolderImages.slice(0, 4);
+  const products = PlaceHolderImages.slice(0, 5);
   const { ref, isInView } = useScrollAnimation();
   const { toast } = useToast();
   const { addToCart } = useCart();
+  const [isContactModalOpen, setContactModalOpen] = useState(false);
 
   const handleAddToCart = (product: ImagePlaceholder) => {
     addToCart(product);
@@ -24,6 +28,10 @@ export default function ProductShowcase() {
       description: `${productName} agregado al carrito`,
     });
   };
+  
+
+
+  
 
   return (
     <>
@@ -35,7 +43,7 @@ export default function ProductShowcase() {
               Elaborados con pasión, nuestros chocolates son un testimonio de calidad y sabor. Descubre tu nuevo favorito.
             </p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
             {products.map((product, index) => {
               const productName = product.id.replace(/-/g, ' ');
               return (
@@ -62,8 +70,30 @@ export default function ProductShowcase() {
                 </Card>
               )
             })}
+            {
+              <Card onClick={() => setContactModalOpen(true)} key={5} className={cn("cursor-pointer overflow-hidden group flex flex-col shadow-sm transition-all hover:shadow-lg", `duration-${300 + 5*200}`, isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10')}>
+                  <CardHeader className="p-0">
+                    <div className="overflow-hidden aspect-square">
+                       <Image
+                          src="/barra.png"
+                          alt={""}
+                          width={600}
+                          height={600}
+                          className="object-cover w-full pd-2 transition-transform duration-300 group-hover:scale-105 "                          
+                          data-ai-hint={""}
+                       />
+                    </div>
+                  </CardHeader>
+                  <CardContent className="p-6 flex-grow flex flex-col">
+                     <CardTitle className="font-headline text-xl mb-2 capitalize">{"Tienes alguno en mente?"}</CardTitle>
+                     <CardDescription className="flex-grow">{"¿Tienes un sabor favorito? Ponte en contacto con nosotros y crea tu propia barra de proteína con los ingredientes que más te gusten."}</CardDescription>
+                  </CardContent>
+                </Card>
+            }
           </div>
         </div>
+              <ContactModal isOpen={isContactModalOpen} onOpenChange={setContactModalOpen} />
+        
       </section>
     </>
   );

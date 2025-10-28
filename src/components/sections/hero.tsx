@@ -3,6 +3,7 @@
 import ChocolateBar3D from '@/components/ui/chocolate-bar-3d';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
+import Image from "next/image";
 
 export default function Hero() {
   const scrollTo = (id: string) => {
@@ -26,7 +27,7 @@ export default function Hero() {
         </Button>
       </div>
       <div className="w-full h-full flex items-center justify-center">
-        <ChocolateBar3D />
+        <Image src="/prochoco.png" alt="Chocolate Bar" width={600} height={400} className="rounded-xl object-cover shadow-md" />
       </div>
     </section>
   );
