@@ -26,7 +26,7 @@ export function SealsAlertDialog({ isOpen, onOpenChange }: SealsAlertDialogProps
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>
-          <AlertDialogAction>Got it!</AlertDialogAction>
+          <AlertDialogAction>Cerrar</AlertDialogAction>
         </AlertDialogFooter>
       </AlertDialogContent>
     </AlertDialog>

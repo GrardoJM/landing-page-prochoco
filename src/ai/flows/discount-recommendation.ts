@@ -65,19 +65,27 @@ const discountRecommendationPrompt = ai.definePrompt({
   name: 'discountRecommendationPrompt',
   input: {schema: DiscountRecommendationInputSchema},
   output: {schema: DiscountRecommendationOutputSchema},
-  prompt: `You are an AI assistant that helps determine whether to offer a discount to a user on the ProChoco website.
+  prompt: `
+Eres un asistente de IA que ayuda a determinar si se debe ofrecer un descuento a un usuario en el sitio web de ProChoco.
 
-  Consider the following information about the user's browsing behavior, cart details, and hesitation signals to determine if a discount should be offered.
+Considera la siguiente información sobre el comportamiento de navegación, detalles del carrito y señales de duda del usuario para decidir si se le debe ofrecer un descuento.
 
-  Browsing History: {{{browsingHistory}}}
-  Cart Details: {{{cartDetails}}}
-  Hesitation Signals: {{{hesitationSignals}}}
+Historial de Navegación: {{{browsingHistory}}}
+Detalles del Carrito: {{{cartDetails}}}
+Señales de Duda: {{{hesitationSignals}}}
 
-  Based on this information, determine whether to offer a discount to the user. If a discount is offered, provide a discount percentage and a reason for offering the discount.
-  Be brief, and provide only the discount (if any) and the reason.
-  Output in JSON format.
+Con base en esta información, determina si se debe ofrecer un descuento al usuario. 
+Si se ofrece un descuento, proporciona un porcentaje de descuento y una razón corta que motive al usuario a completar la compra.
+
+Sé breve y proporciona únicamente:
+- Si se ofrece el descuento (offerDiscount)
+- El porcentaje del descuento (discountPercentage), si aplica
+- La razón (reason), si aplica
+
+**La respuesta debe estar en formato JSON y en español.**
   `,
 });
+
 
 const discountRecommendationFlow = ai.defineFlow(
   {

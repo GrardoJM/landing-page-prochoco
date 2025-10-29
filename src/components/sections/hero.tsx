@@ -27,7 +27,7 @@ export default function Hero() {
         </Button>
       </div>
       <div className="w-full h-full flex items-center justify-center">
-        <Image src="/prochoco.png" alt="Chocolate Bar" width={600} height={400} className="rounded-xl object-cover shadow-md" />
+        <Image src="/prochoco-png.png" alt="Chocolate Bar" width={415} height={320} className="rounded-xl object-cover" />
       </div>
     </section>
   );

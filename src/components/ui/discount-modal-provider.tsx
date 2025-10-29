@@ -52,22 +52,22 @@ export default function DiscountModalProvider({ children }: { children: React.Re
             <div className="bg-accent/20 rounded-full p-3 mb-4 w-fit">
               <PartyPopper className="h-8 w-8 text-accent" />
             </div>
-            <DialogTitle className="font-headline text-2xl">A Special Offer For You!</DialogTitle>
+            <DialogTitle className="font-headline text-2xl">Una especial oferta para ti!</DialogTitle>
             <DialogDescription className="text-base min-h-[24px]">
               {isPending ? <Loader2 className="animate-spin h-6 w-6 mx-auto" /> : recommendation?.reason}
             </DialogDescription>
           </DialogHeader>
           {recommendation?.offerDiscount && (
             <div className="text-center py-4">
-              <p className="text-sm text-muted-foreground">Here's a discount of</p>
+              <p className="text-sm text-muted-foreground">Aquí tienes un descuento de</p>
               <p className="font-headline text-6xl font-bold text-primary my-2">
                 {recommendation.discountPercentage}% OFF
               </p>
-              <p className="text-sm text-muted-foreground">your next purchase.</p>
+              <p className="text-sm text-muted-foreground">para tu próxima compra.</p>
             </div>
           )}
           <Button size="lg" className="w-full bg-accent text-accent-foreground hover:bg-accent/90" onClick={handleClaimDiscountClick}>
-            Claim Discount & Shop Now
+           Reclama tu descuento y compre ahora
           </Button>
         </DialogContent>
       </Dialog>
