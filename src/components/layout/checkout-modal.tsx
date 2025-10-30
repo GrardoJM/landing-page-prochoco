@@ -1,4 +1,3 @@
-
 'use client';
 
 import Image from 'next/image';
@@ -11,6 +10,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { useCart } from '@/context/cart-context';
 import { useToast } from '@/hooks/use-toast';
 import { X, Trash2, ShoppingCart } from 'lucide-react';
+import { useState } from 'react';
 
 interface CheckoutModalProps {
   isOpen: boolean;
@@ -20,17 +20,50 @@ interface CheckoutModalProps {
 export function CheckoutModal({ isOpen, onOpenChange }: CheckoutModalProps) {
   const { cartItems, removeFromCart, clearCart, updateQuantity } = useCart();
   const { toast } = useToast();
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [address, setAddress] = useState('');
+  const [status, setStatus] = useState('');
 
-  const handleConfirmPurchase = (event: React.FormEvent) => {
+  const handleConfirmPurchase = async (event: React.FormEvent) => {
     event.preventDefault();
-    onOpenChange(false);
-    clearCart();
-    toast({
-      title: "Order Received!",
-      description: "We've received your order. Your chocolate is on its way!",
-    });
+    setStatus('sending');
+
+    const orderDetails = {
+      name,
+      email,
+      address,
+      items: cartItems,
+      total: cartItems.reduce((total, item) => total + item.quantity * 1, 0), // Assuming price is 1 for now
+    };
+
+    try {
+      const response = await fetch('/api/checkout', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(orderDetails),
+      });
+
+      if (response.ok) {
+        setStatus('success');
+        toast({
+          title: "¡Pedido Recibido!",
+          description: "Hemos recibido tu pedido. ¡Tu chocolate está en camino!",
+        });
+        clearCart();
+        onOpenChange(false);
+      } else {
+        setStatus('error');
+        toast({ title: "Error", description: "Hubo un problema al procesar tu pedido." });
+      }
+    } catch (error) {
+      setStatus('error');
+      toast({ title: "Error", description: "Hubo un problema con la conexión." });
+    }
   };
-  
+
   const scrollTo = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
@@ -40,12 +73,10 @@ export function CheckoutModal({ isOpen, onOpenChange }: CheckoutModalProps) {
 
   const handleStartShopping = () => {
     onOpenChange(false);
-    // Use a short timeout to ensure the modal is closed before scrolling
     setTimeout(() => {
       scrollTo('product-showcase');
     }, 100);
   };
-
 
   const totalItems = cartItems.reduce((total, item) => total + item.quantity, 0);
 
@@ -89,12 +120,12 @@ export function CheckoutModal({ isOpen, onOpenChange }: CheckoutModalProps) {
             <form className="grid gap-4" onSubmit={handleConfirmPurchase}>
                 <div className="grid gap-2">
                     <Label htmlFor="name">Nombre completo</Label>
-                    <Input id="name" placeholder="Tu nombre" required />
+                    <Input id="name" placeholder="Tu nombre" required value={name} onChange={e => setName(e.target.value)} />
                 </div>
                 <div className="grid grid-cols-2 gap-4">
                     <div className="grid gap-2">
                         <Label htmlFor="email">Correo Electronico</Label>
-                        <Input id="email" type="email" placeholder="tuc@correo.com" required />
+                        <Input id="email" type="email" placeholder="tuc@correo.com" required value={email} onChange={e => setEmail(e.target.value)} />
                     </div>
                      <div className="grid gap-2">
                         <Label htmlFor="payment">Método de pago</Label>
@@ -112,11 +143,13 @@ export function CheckoutModal({ isOpen, onOpenChange }: CheckoutModalProps) {
                 </div>
                 <div className="grid gap-2">
                     <Label htmlFor="address">Dirección de envío</Label>
-                    <Textarea id="address" placeholder="Grand Line 123" required />
+                    <Textarea id="address" placeholder="Grand Line 123" required value={address} onChange={e => setAddress(e.target.value)} />
                 </div>
                 <DialogFooter className="mt-4">
                     <p className="text-muted-foreground mr-auto">Total de artículos: {totalItems}</p>
-                    <Button type="submit" className="w-full sm:w-auto">Comprar Ahora</Button>
+                    <Button type="submit" className="w-full sm:w-auto" disabled={status === 'sending'}>
+                      {status === 'sending' ? 'Procesando...' : 'Comprar Ahora'}
+                    </Button>
                 </DialogFooter>
             </form>
           </>

@@ -9,6 +9,10 @@ import DiscountModalProvider from '@/components/ui/discount-modal-provider';
 import Seals from '@/components/sections/seals';
 import Stores from '@/components/sections/stores';
 import { CartProvider } from '@/context/cart-context';
+import Reviews from '@/components/sections/reviews';
+import ProductCarousel from '@/components/sections/product-carousel';
+import Statistics from '@/components/sections/statistics';
+import WhyUs from '@/components/sections/why-us';
 
 export default function Home() {
   return (
@@ -19,9 +23,13 @@ export default function Home() {
           <main className="flex-1">
             <Hero />
             <ProductShowcase />
+            {/* <Statistics /> */}
+            <WhyUs />
             <About />
             <Seals />
+            <ProductCarousel />
             <Recipes />
+            <Reviews />
             <Stores />
           </main>
           <Footer />

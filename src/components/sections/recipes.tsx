@@ -6,41 +6,48 @@ import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { cn } from "@/lib/utils";
 import { RecipesModal } from '@/components/layout/recipes-modal';
 import { useState } from 'react';
+import { Badge } from "@/components/ui/badge";
+
 const recipes = [
   {
     title: "Barra de Proteína de Chocolate y Avena",
     description: "Una mezcla deliciosa de avena integral y cacao puro, ideal para recuperar energía después del entrenamiento.",
     imageUrl: "/avena.png",
     imageHint: "chocolate oat protein bar",
-    type: "chocolate"
+    type: "chocolate",
+    difficulty: "Fácil"
   },
   {
     title: "Barra Energética de Cacahuate y Miel",
     description: "Combinación perfecta entre proteína vegetal, miel natural y trozos de cacahuate tostado. Dulce, crujiente y nutritiva.",
     imageUrl: "/miel.png",
     imageHint: "peanut honey protein bar",
-    type: "miel"
+    type: "miel",
+    difficulty: "Fácil"
   },
   {
     title: "Barra Proteica de Fresa y Yogur",
     description: "Fresca, suave y con un toque ácido del yogur griego. Perfecta para un snack rápido y saludable.",
     imageUrl: "/fresa.png",
     imageHint: "strawberry yogurt protein bar",
-    type: "yogur"
+    type: "yogur",
+    difficulty: "Intermedio"
   },
   {
     title: "Barra de Proteína de Chocolate Negro con Almendras",
     description: "El sabor intenso del cacao con la crocancia de las almendras. Fuente natural de antioxidantes y energía.",
     imageUrl: "/almentra.png",
     imageHint: "dark chocolate almond protein bar",
-    type: "almond"
+    type: "almond",
+    difficulty: "Intermedio"
   },
   {
     title: "Barra Vegana de Coco y Chía",
     description: "Ligera, tropical y con alto contenido en fibra. Ideal para quienes buscan energía sin ingredientes animales.",
     imageUrl: "/chioa.png",
     imageHint: "coconut chia vegan bar",
-    type: "coco"
+    type: "coco",
+    difficulty: "Difícil"
   }
 ]
 
@@ -91,6 +98,9 @@ export default function Recipes() {
               <CardContent className="p-6 flex-grow flex flex-col">
                 <CardTitle className="font-headline text-xl mb-2">{recipe.title}</CardTitle>
                 <p className="text-muted-foreground flex-grow">{recipe.description}</p>
+                <div className="flex justify-between items-center mt-4">
+                  <Badge variant="outline">{recipe.difficulty}</Badge>
+                </div>
               </CardContent>
             </Card>
           ))}

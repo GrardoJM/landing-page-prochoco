@@ -34,6 +34,7 @@ export default function Header() {
           <Logo />
           <nav className="hidden md:flex items-center gap-4">
             <Button variant="ghost" onClick={() => scrollTo('recipes')}>Recetas</Button>
+            <Button variant="ghost" onClick={() => scrollTo('reviews')}>Reseñas</Button>
             <Button variant="ghost" onClick={() => scrollTo('stores')}>Tiendas</Button>
             <Button variant="ghost" onClick={() => setGoalVisionModalOpen(true)}>Nuestra Vision</Button>
             <Button variant="ghost" onClick={() => setSealsAlertOpen(true)}>Cuidados</Button>
