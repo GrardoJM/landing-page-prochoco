@@ -17,7 +17,8 @@ export default function ProductCarousel() {
     <section className="py-12 md:py-24">
       <div className="container mx-auto px-4">
         <h2 className="mb-8 text-center text-3xl font-bold">Nuestros Productos</h2>
-        <Carousel className="relative w-full overflow-hidden">
+        
+        <Carousel className="w-full">
           <CarouselContent>
             {placeholderImages.placeholderImages.map((image, index) => (
               <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
@@ -39,8 +40,10 @@ export default function ProductCarousel() {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
+
+          {/* Ajuste aquí */}
+          <CarouselPrevious className="left-2 top-1/2 -translate-y-1/2 md:left-4" />
+          <CarouselNext className="right-2 top-1/2 -translate-y-1/2 md:right-4" />
         </Carousel>
       </div>
     </section>
