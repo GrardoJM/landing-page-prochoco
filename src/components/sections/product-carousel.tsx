@@ -17,7 +17,7 @@ export default function ProductCarousel() {
     <section className="py-12 md:py-24">
       <div className="container mx-auto px-4">
         <h2 className="mb-8 text-center text-3xl font-bold">Nuestros Productos</h2>
-        <Carousel className="w-full">
+        <Carousel className="relative w-full overflow-hidden">
           <CarouselContent>
             {placeholderImages.placeholderImages.map((image, index) => (
               <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
